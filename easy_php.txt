@@ -1,0 +1,23 @@
+<?php
+$miwen="1057784114120697511312265851151228784113547974112998397115";
+function encode($str){
+	$_o=strrev($str);      
+    for($_0=0;$_0<strlen($_o);$_0++){       
+        $_c=substr($_o,$_0,1);
+        $__=ord($_c)+1;
+        $_c=chr($__);
+        $_=$_.$_c;   
+    } 
+    $cst1=str_rot13(strrev(base64_encode($_)));
+	$cst=array();
+	$cst=unpack("C*",$cst1);
+	for($_1=0;$_1<=count($cst);$_1++){
+		$_d=$cst[$_1];
+		$_t=$_t.$_d;
+	}
+	return $_t;
+}
+?> 
+/*
+   Reverse encryption algorithm
+*/ 
